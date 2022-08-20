@@ -1,6 +1,7 @@
 <div class="group-form">
     <div class="form-content">
 
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
        <div class="form">
         <div class="form-head1">
         <span class="a" style="color: rgb(66, 133, 244)">F</span>
@@ -17,19 +18,21 @@
             <p>
               <mat-form-field class="form-cd-rm" appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email">
+                <input matInput placeholder="Email" formControlName="username">
+                <mat-error>Enter Email Id</mat-error>
               </mat-form-field>
             </p>
             <p>
               <mat-form-field class="form-cd-rm" appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password">
+                <input matInput placeholder="Password" formControlName="password">
+                <mat-error>Enter Password</mat-error>
               </mat-form-field>
             </p>
           </div>
 
           <div class="message1">
-            <p>Forgot Password? </p>
+            <a routerLink="/forgotpassword">Forgot Password? </a>
           </div>
 
           <div class="message">
@@ -43,5 +46,6 @@
           </div>
 
        </div>
+      </form>
     </div>
 </div>       

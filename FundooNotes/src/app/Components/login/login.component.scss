@@ -65,18 +65,20 @@
 .btn{
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
-    padding-right: 80px;
+    margin-top: 35px;
+    padding-right: 50px;
     a{
-        color: rgb(66, 133, 244);
+        color: #1a73e8;
         font-size: 16px;
+        padding-top: 10px;
     }
     button{
-        background-color: rgb(66, 133, 244);
+        background-color:#1a73e8;
         font-size: 20px;
-        border-radius: 6px;
-        border-color: rgb(66, 133, 244);
+        width: 65px;
+        height: 40px;
+        border-radius: 7px;
+        border-color: #1a73e8;
         color: #fff;
-        left: -20%;
     }
 }

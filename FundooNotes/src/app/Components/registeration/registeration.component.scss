@@ -71,12 +71,13 @@
     padding-right: 20px;
 }
 .example-margin {
-    margin: 4px 12px;
+    margin:  12px;
   }
   .btn{
     display: flex;
     justify-content: space-between;
-    margin-top: 35px;
+    margin-top: 22px;
+    width: 415px;
     a{
         color: #1a73e8;
         font-size: 16px;
@@ -84,9 +85,9 @@
     button{
         background-color:#1a73e8;
         font-size: 20px;
-        width: 65px;
-        height: 40px;
-        border-radius: 7px;
+        width: 72px;
+        height: 38px;
+        border-radius: 5px;
         border-color: #1a73e8;
         color: #fff;
     }
