@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/Services/userService/user.service';
 
 @Component({
   selector: 'app-registeration',
@@ -7,10 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registeration.component.scss']
 })
 export class RegisterationComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm : FormGroup;
     submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private user : UserService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -21,12 +22,23 @@ export class RegisterationComponent implements OnInit {
       confirmPassword: ['', Validators.required]
      });
     }
+    get f() { return this.registerForm.controls; }
 
     onSubmit() {
         this.submitted = true;
 
-        if (this.registerForm.invalid) {
-            return;
+        if (this.registerForm.valid) {
+            //return;
+          console.log(this.registerForm.value)
+            let reqData={
+              FirstName:this.registerForm.value.firstName,
+              LastName:this.registerForm.value.lastName,
+              Email:this.registerForm.value.email,
+              Password:this.registerForm.value.password
+            }
+            this.user.Registration(reqData).subscribe((response:any)=> {
+            console.log(response);
+            });
         }
       }
 }
