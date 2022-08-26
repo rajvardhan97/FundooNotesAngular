@@ -40,12 +40,12 @@ export class UserService {
         'Content-type':'application/json',
       })
     }
-    return this.httpService.postService('/User/ForgetPassword?Email='+reqdata.Email,{},false,header)
+    return this.httpService.postService('/User/ForgotPassword?Email='+reqdata.Email,{},false,header)
 }
 
 reset(reqdata: any, token: any){
   console.log(reqdata);
-  
+
   let header = {
     headers:new HttpHeaders({
       'Content-type':'application/json',
