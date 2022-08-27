@@ -1,0 +1,55 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar  class="example-toolbar">
+    <div class="keep-icon">
+      <button class="hov" mat-icon-button (click)="snav.toggle()">
+        <mat-icon class="menu-icon">menu</mat-icon>
+      </button>
+      <img src="../../../assets/icon.png" >
+      <h1 class="example-app-name">Fundoo</h1>
+    </div>
+
+     <div class="search-box">
+      <img src="../../../assets/search_FILL0_wght400_GRAD0_opsz48.svg" />
+      <input matInput placeholder="search" />
+    </div>
+
+
+     <div class="right-icons">
+      <img src="../../../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" />
+      <img src="../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" />
+      <img src="../../../assets/settings_FILL0_wght400_GRAD0_opsz48.svg" />
+    </div>
+    <div class="menu">
+      <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg" />
+
+      <button mat-icon-button [matMenuTriggerFor]="logout" class="logoutbtn">
+        <img class="refreshclass" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" />
+      </button>
+        <mat-menu #logout="matMenu">
+          <img src="../../../assets/logout_FILL0_wght400_GRAD0_opsz48.svg" />
+        </mat-menu>
+    </div>
+  </mat-toolbar> 
+
+  <mat-sidenav-container
+  class="example-sidenav-container"
+  [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+>
+  <mat-sidenav
+    #snav
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+    fixedTopGap="56"
+  >
+    <mat-nav-list class="nav-list">
+      <a mat-list-item><img src="../../../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" />Notes</a>
+      <a mat-list-item><img src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" />Reminder</a>
+      <a mat-list-item><img src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg" />Label</a>
+      <a mat-list-item><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" />Archive</a>
+      <a mat-list-item><img src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" />Trash</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <p><router-outlet></router-outlet></p>
+</mat-sidenav-container>
+
+</div>
