@@ -21,4 +21,7 @@ export class GetAllNoteComponent implements OnInit {
       console.log("Array:", this.notelist);
     })
   }
+  updatedData($event : any) {
+  this.onSubmit();
+  }
 }

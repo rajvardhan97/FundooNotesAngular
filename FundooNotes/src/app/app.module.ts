@@ -23,7 +23,9 @@ import { DisplayNoteComponent } from './Components/display-note/display-note.com
 import { IconsComponent } from './Components/icons/icons.component';
 import { CreateNoteComponent } from './Components/create-note/create-note.component';
 import {MatCardModule} from '@angular/material/card';
-
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import {MatCardModule} from '@angular/material/card';
     GetAllNoteComponent,
     DisplayNoteComponent,
     IconsComponent,
-    CreateNoteComponent
+    CreateNoteComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,9 @@ import {MatCardModule} from '@angular/material/card';
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

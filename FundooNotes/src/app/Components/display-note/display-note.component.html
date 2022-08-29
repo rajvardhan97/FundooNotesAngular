@@ -1,32 +1,26 @@
-<div *ngFor= "let notes of notesList" class="card">
-    <mat-card class="example-card" class="notesContainer">
-      <mat-card-title class="title">{{notes.title}}
-        <img class="moreicons1" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">
-      </mat-card-title>
-      <mat-card-content >
-        <p>{{notes.description}}</p>
-        <div>{{notes.notesId}}</div>
-      </mat-card-content>
-      
-      <div class="icons" ngMouseover="display">
-        <button class="notesbutton">
-            <img class="moreicons" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
+<div class="display-note row">
+    <div *ngFor="let note of notesList">
+      <mat-card class="note-card">
+        <button class="pinbutton">
+          <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">
         </button>
-        <button class="notesbutton">
-            <img class="moreicons" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
-        </button>
-        <button class="notesbutton">
-            <img class="moreicons" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
-        </button>
-        <button class="notesbutton">
-            <img class="moreicons" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
-        </button>
-        <button class="notesbutton">
-            <img class="moreicons" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
-        </button>
-        <button class="notesbutton">
-            <img class="moreicons" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
-        </button>
+        <mat-card-title class="note-title" (click)="openDialog(note)">
+          {{note.title}}
+        </mat-card-title>
+        <mat-card-content class="note-description" (click)="openDialog(note)">
+          {{note.description}}
+          <div> {{note.noteID}}</div>
+        </mat-card-content>
+        <div class="icons">
+          <button class="notesbutton">
+            <img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
+            <img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
+            <img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
+            <img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+            <img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
+            <img src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
+          </button>
+        </div>
+      </mat-card>
     </div>
-    </mat-card>
-</div>
+  </div>
