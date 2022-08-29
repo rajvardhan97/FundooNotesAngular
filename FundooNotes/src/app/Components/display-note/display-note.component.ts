@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-display-note',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisplayNoteComponent implements OnInit {
 
   constructor() { }
-
+  @Input() notesList:any;
   ngOnInit(): void {
   }
 

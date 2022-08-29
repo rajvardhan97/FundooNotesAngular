@@ -22,6 +22,7 @@ import { GetAllNoteComponent } from './Components/get-all-note/get-all-note.comp
 import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CreateNoteComponent } from './Components/create-note/create-note.compon
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
