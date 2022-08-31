@@ -26,6 +26,7 @@ import {MatCardModule} from '@angular/material/card';
 import { UpdateNoteComponent } from './Components/update-note/update-note.component';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TrashComponent } from './Components/trash/trash.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     DisplayNoteComponent,
     IconsComponent,
     CreateNoteComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

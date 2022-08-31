@@ -42,4 +42,15 @@ export class NotesService {
   }
   return this.httpService.putService('/Notes/Update?NoteId='+ noteId,reqData,true,header)
 }
+
+trashnotes(reqData:any){
+
+  let header ={
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+        'Authorization':'Bearer '+ this.token
+    })
+  }
+  return this.httpService.putService('/Notes/Trash?NotesId='+ reqData.noteId,{},true,header)
+  }
 }

@@ -1,1 +1,22 @@
-<p>icons works!</p>
+<div class="icongroup">
+    <img class="search_image" style="margin-right: 6px;
+        height: 20px;" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
+    <img class="search_image" style="margin-right: 6px;
+        height: 20px;" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
+    <img class="search_image" style="margin-right: 6px;
+        height: 20px;" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
+    <img class="search_image" style="margin-right: 6px;
+        height: 20px;" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+    <img class="search_image" style="margin-right: 6px;
+        height: 20px;" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
+    <img class="search_image" style="margin-right: 6px;
+        height: 20px;" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg" [matMenuTriggerFor]="more">
+        <mat-menu #more="matMenu">
+            <button mat-menu-item  (click)="onDelete()">Delete note</button>
+            <button mat-menu-item>Add Label</button>
+            <button mat-menu-item>Add drawing</button>
+            <button mat-menu-item>Make a copy</button>
+            <button mat-menu-item>Show checkboxes</button>
+            <button mat-menu-item>Copy to google Docs</button>
+          </mat-menu>
+  </div>

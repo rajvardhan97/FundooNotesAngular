@@ -11,15 +11,9 @@
           {{note.description}}
           <div> {{note.noteID}}</div>
         </mat-card-content>
-        <div class="icons">
-          <button class="notesbutton">
-            <img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
-            <img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
-            <img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
-            <img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
-            <img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
-            <img src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
-          </button>
+        <div class="icons" >
+            <app-icons [noteObject]="note"></app-icons>
+
         </div>
       </mat-card>
     </div>
