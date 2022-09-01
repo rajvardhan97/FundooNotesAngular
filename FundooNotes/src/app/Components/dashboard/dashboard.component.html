@@ -42,11 +42,11 @@
     fixedTopGap="56"
   >
     <mat-nav-list class="nav-list">
-      <a mat-list-item><img src="../../../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" />Notes</a>
+      <a mat-list-item routerLink="/dashboard/notes"><img src="../../../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" />Notes</a>
       <a mat-list-item><img src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" />Reminder</a>
       <a mat-list-item><img src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg" />Label</a>
-      <a mat-list-item><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" />Archive</a>
-      <a mat-list-item><img src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" />Trash</a>
+      <a mat-list-item routerLink="/dashboard/archive"><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" />Archive</a>
+      <a mat-list-item routerLink="/dashboard/trash"><img src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" />Trash</a>
     </mat-nav-list>
   </mat-sidenav>
   <p><router-outlet></router-outlet></p>

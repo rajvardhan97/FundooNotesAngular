@@ -48,9 +48,30 @@ trashnotes(reqData:any){
   let header ={
     headers: new HttpHeaders({
       'Content-type': 'application/json',
-        'Authorization':'Bearer '+ this.token
+      'Authorization':'Bearer '+ this.token
     })
   }
   return this.httpService.putService('/Notes/Trash?NotesId='+ reqData.noteId,{},true,header)
+  }
+
+  archivenotes(reqData:any){
+    let header= {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':'Bearer '+ this.token
+      })
+    }
+    return this.httpService.putService('/Notes/Archive?NoteId='+ reqData.noteId,{}, true, header)
+  }
+
+  ColorNote(noteId:any, data:any){
+    console.log(noteId, data.color);
+    let header= {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':'Bearer '+ this.token
+      })
+    }
+    return this.httpService.putService('/Notes/Color', {noteId:noteId,addcolor:data.color}, true, header)
   }
 }

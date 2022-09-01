@@ -1,0 +1,24 @@
+<!-- <app-display-note [notesList] = "archiveList"></app-display-note> -->
+
+<div class="display-note row">
+    <div *ngFor="let note of archiveList">
+      <mat-card class="note-card">
+        
+        <mat-card-title class="note-title">
+          {{note.title}}
+        </mat-card-title>
+        <mat-card-content class="note-description">
+          {{note.description}}
+          <div> {{note.noteID}}</div>
+        </mat-card-content>
+        <div class="icons" >
+          <img src = "../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+          <img src = "../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+          <img src = "../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+          <img src = "../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+          <img src = "../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+          <img src = "../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+        </div>
+      </mat-card>
+    </div>
+  </div>

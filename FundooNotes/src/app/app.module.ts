@@ -27,6 +27,7 @@ import { UpdateNoteComponent } from './Components/update-note/update-note.compon
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TrashComponent } from './Components/trash/trash.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { TrashComponent } from './Components/trash/trash.component';
     IconsComponent,
     CreateNoteComponent,
     UpdateNoteComponent,
-    TrashComponent
+    TrashComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,

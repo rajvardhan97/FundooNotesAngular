@@ -1,1 +1,20 @@
-<app-display-note>[notesList] = "trashList"</app-display-note>
+<!-- <app-display-note [notesList] = "trashList"></app-display-note> -->
+
+<div class="display-note row">
+    <div *ngFor="let note of trashList">
+      <mat-card class="note-card">
+        
+        <mat-card-title class="note-title">
+          {{note.title}}
+        </mat-card-title>
+        <mat-card-content class="note-description">
+          {{note.description}}
+          <div> {{note.noteID}}</div>
+        </mat-card-content>
+        <div class="icons" >
+            <img src = "../../../assets/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg" width="20px" (click)="unTrash(note)">
+            <img src = "../../../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" width="20px">
+        </div>
+      </mat-card>
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 .display-note{
-   display: flex;
+   display: inline-flex;
    flex-flow: wrap;
-   position: fixed;
+   position: relative;
    left: 16%;
    width: 90%;
    column-gap: 20px;
