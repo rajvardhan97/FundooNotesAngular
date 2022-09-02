@@ -22,7 +22,7 @@
     <div class="menu">
       <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg" />
 
-      <button mat-icon-button [matMenuTriggerFor]="logout" class="logoutbtn">
+      <button mat-icon-button [matMenuTriggerFor]="logout" class="logoutbtn" (click)="Logout()">
         <img class="refreshclass" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" />
       </button>
         <mat-menu #logout="matMenu">

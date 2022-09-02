@@ -1,8 +1,12 @@
-.color{
-    box-sizing: border-box;
-    padding: 5px 7px 3px;
-    position: absolute;
-    width: 136px;
-    display: flex;
-    position: relative;
+.search_image{
+    opacity: 0.8;
+    padding: 3px
 }
+.colorIcon{
+    border-radius: 100px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    border:none;
+}
+

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
 
 @Component({
@@ -8,13 +8,15 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
 })
 export class IconsComponent implements OnInit {
   @Input() noteObject:any;
+  @Output() refreshEvent = new EventEmitter<string>();
   noteId : any;
   color : any;
-  colorarray = [// [, '', '', '', ', ', '#cbf0f8', '#aecbfa']
-  {color:'white'},{color:'#f28b82',name:'red'},{color:'#fbbc04',name:'orange'},
-  {color:'#fff475',name:'yellow'},{color:'#ccff90', name:'green'},{color:'#a7ffeb',name:'teal'},
-  {color: '',name:'blue'},{name:'Dark blue'},{name:'Purple'},{name:'pink'},{name:'brown'},
-  {name:'Grey'}];
+  colorarray: Array<any> = [{ code: "white", name: "White" }, { code: "tomato", name: "Red" },
+  { code: "orange", name: "Orange" }, { code: "gold", name: "Yellow" },
+  { code: "lightgreen", name: "Green" }, { code: "lightblue", name: "Teal" },
+  { code: "turquoise", name: "Blue" }, { code: "royalblue", name: "Dark-Blue" },
+  { code: "mediumorchid", name: "Purple" }, { code: "pink", name: "Pink" },
+  { code: "peru", name: "Brown" }, { code: "grey", name: "Gray" }];
 
 
   constructor(private noteService : NotesService) { }
@@ -29,6 +31,7 @@ export class IconsComponent implements OnInit {
     console.log(reqData)
     this.noteService.trashnotes(reqData).subscribe((response: any) => {
       console.log("Note Trashed Successfully",response);
+      this.refreshEvent.emit(response);
     })
   }
 
@@ -39,19 +42,18 @@ export class IconsComponent implements OnInit {
     console.log(reqData);
     this.noteService.archivenotes(reqData).subscribe((response: any) =>{
       console.log("Note Archived Successfully", response);
+      this.refreshEvent.emit(response);
     })
   }
 
-   setColor(Color:any){
-    console.log(Color)
-    this.noteObject.color=Color
-    this.noteId=this.noteObject.noteId
-    let data = {
-      color : Color
+   setColor(color:any){
+    let reqData = {
+      noteId:this.noteObject.noteId,
+      color : color.name
     }
-    this.noteService.ColorNote(this.noteId,data).subscribe((result: any) => {
-      console.log(result); 
-
+    this.noteService.ColorNote(reqData).subscribe((result: any) => {
+      console.log('Color applied',result); 
+      this.refreshEvent.emit(result);
   })
 }
 }

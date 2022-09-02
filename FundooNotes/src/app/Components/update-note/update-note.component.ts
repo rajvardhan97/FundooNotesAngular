@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject,Output } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({

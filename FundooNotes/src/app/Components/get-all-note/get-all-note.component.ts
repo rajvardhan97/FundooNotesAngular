@@ -24,4 +24,9 @@ export class GetAllNoteComponent implements OnInit {
     })
   })
 }
+refreshNote($event:any){
+  console.log($event);
+  this.onSubmit();
+}
+
 }

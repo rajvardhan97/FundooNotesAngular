@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit,Output,EventEmitter} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
@@ -9,6 +9,8 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 })
 export class DisplayNoteComponent implements OnInit {
   @Input() notesList:any;
+  @Output() refreshDisplay = new EventEmitter<string>();
+  message : any;
 
   constructor(private dialog: MatDialog) { }
 
@@ -25,5 +27,10 @@ export class DisplayNoteComponent implements OnInit {
      dialogRef.afterClosed().subscribe(result => {
      console.log('The dialog was closed',result);
      })
+  }
+  RefreshEvent($event:any){
+    console.log($event);
+    this.message = $event;
+    this.refreshDisplay.emit(this.message);
   }
 }

@@ -64,14 +64,14 @@ trashnotes(reqData:any){
     return this.httpService.putService('/Notes/Archive?NoteId='+ reqData.noteId,{}, true, header)
   }
 
-  ColorNote(noteId:any, data:any){
-    console.log(noteId, data.color);
+  ColorNote( reqData:any){
+    console.log(reqData);
     let header= {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization':'Bearer '+ this.token
       })
     }
-    return this.httpService.putService('/Notes/Color', {noteId:noteId,addcolor:data.color}, true, header)
+    return this.httpService.putService('/Notes/Color?NoteId=' + reqData.noteId + '&addcolor=' + reqData.color, {}, true, header)
   }
 }

@@ -1,6 +1,6 @@
 <div class="display-note row">
     <div *ngFor="let note of notesList">
-      <mat-card class="note-card">
+      <mat-card class="note-card" [style.background]="note.color">
         <button class="pinbutton">
           <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">
         </button>
@@ -12,8 +12,7 @@
           <div> {{note.noteID}}</div>
         </mat-card-content>
         <div class="icons" >
-            <app-icons [noteObject]="note"></app-icons>
-
+            <app-icons [noteObject]="note" (refreshEvent)="RefreshEvent($event)"></app-icons>
         </div>
       </mat-card>
     </div>
