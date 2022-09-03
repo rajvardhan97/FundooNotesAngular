@@ -1,7 +1,7 @@
 import { Component, Input, OnInit,Output,EventEmitter} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
-
+import { DataService } from 'src/app/Services/dataService/data.service';
 @Component({
   selector: 'app-display-note',
   templateUrl: './display-note.component.html',
@@ -11,11 +11,17 @@ export class DisplayNoteComponent implements OnInit {
   @Input() notesList:any;
   @Output() refreshDisplay = new EventEmitter<string>();
   message : any;
+  searchNote : any;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private data : DataService) { }
 
   ngOnInit(): void {
     console.log("Success",this.notesList);
+    
+    this.data.incomingData.subscribe((res) => {
+      console.log("Searching Process",res)
+      this.searchNote = res;
+    })
   }
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateNoteComponent,  {

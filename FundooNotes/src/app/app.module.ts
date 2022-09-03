@@ -29,6 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { TrashComponent } from './Components/trash/trash.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { AuthguradServiceService } from './Services/authguard.service';
+import { FilterPipe } from './Pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AuthguradServiceService } from './Services/authguard.service';
     CreateNoteComponent,
     UpdateNoteComponent,
     TrashComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

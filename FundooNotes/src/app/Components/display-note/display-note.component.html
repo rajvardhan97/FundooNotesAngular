@@ -1,5 +1,5 @@
 <div class="display-note row">
-    <div *ngFor="let note of notesList">
+    <div *ngFor="let note of notesList | filter: searchNote " >
       <mat-card class="note-card" [style.background]="note.color">
         <button class="pinbutton">
           <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">

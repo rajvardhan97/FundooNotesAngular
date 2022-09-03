@@ -1,6 +1,7 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/Services/dataService/data.service';
 
 /** @title Responsive sidenav */
 @Component({
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
+  value : any;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -21,7 +23,7 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(private router:Router,changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(private dataservice : DataService, private router:Router,changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -35,5 +37,10 @@ export class DashboardComponent implements OnDestroy {
   {
     localStorage.removeItem("token");
     this.router.navigateByUrl('/login');
+  }
+
+  Search(event:any){
+    console.log(event.target.value)
+    this.dataservice.outgoingData(event.target.value)
   }
 }

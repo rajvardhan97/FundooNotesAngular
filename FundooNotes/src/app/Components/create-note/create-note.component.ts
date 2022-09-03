@@ -1,5 +1,4 @@
-import { trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
@@ -10,6 +9,7 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
   styleUrls: ['./create-note.component.scss']
 })
 export class CreateNoteComponent implements OnInit {
+  @Output() autorefreshs = new EventEmitter<any>();
 createForm : FormGroup;
 display : boolean=true;
 submitted = false;
@@ -39,6 +39,7 @@ description:string=""
       console.log(reqData);
       this.note.createnotes(reqData).subscribe((response : any) =>{
         console.log(response);
+        this.autorefreshs.emit();
       });
     }
     else{
@@ -50,5 +51,6 @@ description:string=""
       }
     }
     this.display=true;
+    
   }
 }

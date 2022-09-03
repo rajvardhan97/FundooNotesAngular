@@ -10,7 +10,7 @@
 
      <div class="search-box">
       <img src="../../../assets/search_FILL0_wght400_GRAD0_opsz48.svg" />
-      <input matInput placeholder="search" />
+      <input matInput placeholder="search" (keyup)="Search($event)" />
     </div>
 
 
@@ -22,11 +22,11 @@
     <div class="menu">
       <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg" />
 
-      <button mat-icon-button [matMenuTriggerFor]="logout" class="logoutbtn" (click)="Logout()">
+      <button mat-icon-button [matMenuTriggerFor]="logout" class="logoutbtn" >
         <img class="refreshclass" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" />
       </button>
-        <mat-menu #logout="matMenu">
-          <img src="../../../assets/logout_FILL0_wght400_GRAD0_opsz48.svg" />
+        <mat-menu #logout="matMenu" >
+          <img src="../../../assets/logout_FILL0_wght400_GRAD0_opsz48.svg" (click)="Logout()" />
         </mat-menu>
     </div>
   </mat-toolbar> 
